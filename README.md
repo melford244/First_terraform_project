@@ -2,7 +2,6 @@
 Here’s a step-by-step guide to launch an EC2 instance using Terraform and retrieve the instance ID using Terraform commands (init, plan, apply, and destroy). This guide assumes you have Terraform installed and AWS credentials configured.
 
 ## Architecture Diagram
-
 ![Image Alt](https://raw.githubusercontent.com/melford244/First_terraform_project/3cc8a7116ddf39247eb75ddbc88ac2c0ce3c4886/terraform.drawio.png)
 
 # Detailed Steps 
@@ -146,4 +145,3 @@ Here’s a **step-by-step guide** to launch an EC2 instance using Terraform and 
   aws ec2 describe-images --owners amazon --filters "Name=name,Values=amzn2-ami-hvm-*" --query "Images[*].[ImageId,Name]" --output table
   ```
 
-Let me know if you need further assistance! 😊
