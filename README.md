@@ -1,6 +1,13 @@
 # Automated EC2 Instance Deployment on AWS Using Terraform: A Step-by-Step Guide
 Here’s a step-by-step guide to launch an EC2 instance using Terraform and retrieve the instance ID using Terraform commands (init, plan, apply, and destroy). This guide assumes you have Terraform installed and AWS credentials configured.
 
+### **Precaution**
+- **AWS Credentials:** Ensure your AWS credentials are configured. You can use the `~/.aws/credentials` file or environment variables (`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`).
+- **AMI ID:** Use the correct AMI ID for your region. You can find AMI IDs in the AWS Management Console or using the AWS CLI:
+  ```bash
+  aws ec2 describe-images --owners amazon --filters "Name=name,Values=amzn2-ami-hvm-*" --query "Images[*].[ImageId,Name]" --output table
+  ```
+
 ## Architecture Diagram
 ![Image Alt](https://raw.githubusercontent.com/melford244/First_terraform_project/3cc8a7116ddf39247eb75ddbc88ac2c0ce3c4886/terraform.drawio.png)
 
@@ -137,11 +144,4 @@ Here’s a **step-by-step guide** to launch an EC2 instance using Terraform and 
    ```
 
 ---
-
-### **Additional Notes:**
-- **AWS Credentials:** Ensure your AWS credentials are configured. You can use the `~/.aws/credentials` file or environment variables (`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`).
-- **AMI ID:** Use the correct AMI ID for your region. You can find AMI IDs in the AWS Management Console or using the AWS CLI:
-  ```bash
-  aws ec2 describe-images --owners amazon --filters "Name=name,Values=amzn2-ami-hvm-*" --query "Images[*].[ImageId,Name]" --output table
-  ```
 
